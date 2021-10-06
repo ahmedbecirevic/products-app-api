@@ -40,10 +40,10 @@ class BaseDao
         $this->connection->commit();
     }
 
-    public function deleteBySKU ($skuList) {
-        $query = "DELETE FROM $this->table WHERE SKU IN (:skuList)";
-        $this->query($query, ["skuList" => $skuList]);
-    }
+    // public function deleteBySKU ($skuList) {
+    //     $query = "DELETE FROM $this->table WHERE SKU IN (:skuList)";
+    //     $this->query($query, ["skuList" => $skuList]);
+    // }
 
     public function parseOrder($order)
     {
@@ -130,9 +130,5 @@ class BaseDao
         return $this->query("SELECT * FROM " . $this->table . "
                             ORDER BY $order_column $order_direction 
                             LIMIT $limit OFFSET $offset", []);
-    }
-
-    public function getAllProducts () {
-        return $this->query("SELECT * FROM " . $this->table, []);
     }
 }
