@@ -64,11 +64,6 @@ Route::add('/products/delete', function () {
   
 }, 'post');
 
-$path = '/products-app-scandiweb/api';
-
-// if (Config::SERVER_NAME() == 'localhost') {
-//   $path = '/products-app-scandiweb/api';
-// }
-
-Route::run($path);
+// start 
+Route::run(Config::PATH());
 ?>
