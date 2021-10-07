@@ -65,5 +65,5 @@ Route::add('/products/delete', function () {
 }, 'post');
 
 // start 
-Route::run(Config::PATH());
+Route::run(Config::PATH_RUN());
 ?>

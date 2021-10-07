@@ -40,8 +40,8 @@ class Config
         return $_SERVER['SERVER_NAME'];
     }
 
-    public static function PATH () {
-        return Config::get_env("PATH", "/products-app-api");
+    public static function PATH_RUN () {
+        return Config::get_env("PATH_RUN", "/products-app-api");
     }
 
     public static function get_env($name, $default)
