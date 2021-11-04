@@ -3,14 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once dirname(__FILE__) . "/vendor/autoload.php";
-require_once dirname(__FILE__) . "/services/ProductService.class.php";
-require_once dirname(__FILE__) . "/routes/Route.class.php";
-require_once dirname(__FILE__) . "/Utils.class.php";
-require_once dirname(__FILE__) . "/config.php";
 require_once dirname(__FILE__) . "/Cors.class.php";
-require_once dirname(__FILE__) . "/routes/Request.class.php";
-
 
 try {
   // Allow and set up CORS by calling this function from Cors.class.php file
@@ -19,7 +12,13 @@ try {
 } catch (\Throwable $th) {
   throw $th;
 }
-  
+
+require_once dirname(__FILE__) . "/services/ProductService.class.php";
+require_once dirname(__FILE__) . "/routes/Route.class.php";
+require_once dirname(__FILE__) . "/Utils.class.php";
+require_once dirname(__FILE__) . "/config.php";
+require_once dirname(__FILE__) . "/routes/Request.class.php";
+
 // define instance of ProductService class
 $productsService = new ProductService();
 $request = new Request();
