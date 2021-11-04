@@ -4,7 +4,6 @@ class Config
     // const DATE_FORMAT = "Y-m-d H:i:s";
     // const JWT_SECRET = "dk*M6spn7qk6b$<5";
     // const JWT_TOKEN_TIME = 604800;
-
     // DB connection
     public static function DB_HOST ()
     {
@@ -26,7 +25,6 @@ class Config
     {
         return Config::get_env("DB_PORT", "3306");
     }
-
     // environment servers setup
     public static function ENVIRONMENT_SERVER ()
     {
@@ -35,9 +33,12 @@ class Config
     public static function PROTOCOL () {
         return strtolower(substr($_SERVER["SERVER_PROTOCOL"],0,strpos( $_SERVER["SERVER_PROTOCOL"],'/'))).'://';
     }
-
     public static function SERVER_NAME () {
         return $_SERVER['SERVER_NAME'];
+    }
+
+    public static function PATH_RUN () {
+        return Config::get_env("PATH_RUN", "/products-app-api");
     }
 
     public static function get_env($name, $default)
